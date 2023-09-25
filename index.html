@@ -7,56 +7,53 @@
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
     
-    <title>Tommaso's Curriculum Vitae</title>
-    
+    <title>Tommaso's CV</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
-        iframe {
-            border: none;
-            width: 100%;
+        .landing-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             height: 100vh;
+            background-color: #f0f0f0;
         }
         .cv-links {
             display: flex;
-            justify-content: center;
-            background-color: #f0f0f0;
-            padding: 10px;
+            flex-direction: column;
+            margin-top: 20px;
         }
-        .cv-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
+        .cv-link {
+            margin: 10px;
+            text-align: center;
             font-weight: bold;
         }
-        .cv-links a:hover {
+        .cv-link a {
+            text-decoration: none;
+            color: #333;
+        }
+        .cv-link a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="cv-links">
-        <a href="#" onclick="changeCV('english')">English CV</a>
-        <a href="#" onclick="changeCV('italian')">Italian CV</a>
+    <div class="landing-page">
+        <h1>Tommaso's CV</h1>
+        <p>Choose the language you want to view the CV:</p>
+        <div class="cv-links">
+            <div class="cv-link">
+                <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ENG.pdf&embedded=true" target="cv-iframe">English CV</a>
+            </div>
+            <div class="cv-link">
+                <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ITA.pdf&embedded=true" target="cv-iframe">Italian CV</a>
+            </div>
+        </div>
+        <iframe src="about:blank" name="cv-iframe" frameborder="0" width="800" height="600"></iframe>
     </div>
-    <iframe id="cv-iframe" src="https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ENG.pdf"></iframe>
-
-    <script>
-        const cvIframe = document.getElementById('cv-iframe');
-
-        function changeCV(language) {
-            if (language === 'english') {
-                cvIframe.src = "https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ENG.pdf";
-            } else if (language === 'italian') {
-                cvIframe.src = "https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ITA.pdf";
-            }
-        }
-    </script>
 </body>
 </html>
-
-
-
