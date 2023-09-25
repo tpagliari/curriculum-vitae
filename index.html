@@ -38,6 +38,7 @@
         .cv-link a {
             text-decoration: none;
             color: #333;
+            cursor: pointer; /* Add cursor pointer for better user feedback */
         }
         .cv-link a:hover {
             text-decoration: underline;
@@ -67,10 +68,10 @@
 
         <div class="cv-links">
             <div class="cv-link">
-                <a href="https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ENG.pdf" target="_blank">English CV</a>
+                <a onclick="openPDF('https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ENG.pdf')">English CV</a>
             </div>
             <div class="cv-link">
-                <a href="https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ITA.pdf" target="_blank">Italian CV</a>
+                <a onclick="openPDF('https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ITA.pdf')">Italian CV</a>
             </div>
         </div>
 
