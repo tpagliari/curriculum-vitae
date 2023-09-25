@@ -7,6 +7,10 @@
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
     <title>Tommaso's CV</title>
+    
+    <!-- Include PDF.js from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    
     <style>
         body {
             margin: 0;
@@ -72,6 +76,42 @@
 
         <iframe src="about:blank" name="cv-iframe" frameborder="0"></iframe>
     </div>
+    
+    <script>
+        // Function to open PDF using PDF.js
+        function openPDF(pdfUrl) {
+            const pdfContainer = document.getElementById('pdf-container');
+            pdfContainer.innerHTML = ''; // Clear previous content
+
+            const pdfjsLib = window['pdfjs-dist/build/pdf'];
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+            const loadingTask = pdfjsLib.getDocument(pdfUrl);
+            loadingTask.promise.then(function(pdf) {
+                const numPages = pdf.numPages;
+                for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(function(page) {
+                        const scale = 1.5;
+                        const viewport = page.getViewport({ scale: scale });
+
+                        const pdfCanvas = document.createElement('canvas');
+                        const context = pdfCanvas.getContext('2d');
+                        pdfCanvas.height = viewport.height;
+                        pdfCanvas.width = viewport.width;
+
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+
+                        pdfCanvas.style.maxWidth = '100%';
+                        pdfContainer.appendChild(pdfCanvas);
+
+                        page.render(renderContext);
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
-
