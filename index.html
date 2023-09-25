@@ -40,7 +40,7 @@
         .cv-link a:hover {
             text-decoration: underline;
         }
-        iframe {
+        object {
             max-width: 100%;
             width: 100%;
             height: 70vh; /* Default height for larger screens */
@@ -51,7 +51,7 @@
             .cv-link {
                 margin: 5px; /* Reduce margin for smaller screens */
             }
-            iframe {
+            object {
                 height: 80vh; /* Adjust height for smaller screens */
             }
         }
@@ -72,13 +72,15 @@
             </div>
         </div>
 
-        <iframe id="cv-iframe" frameborder="0"></iframe>
+        <object data="" id="cv-object" type="application/pdf">
+            <p>Your browser does not support PDFs.</p>
+        </object>
     </div>
     
     <script>
         function showPDF(pdfUrl) {
-            const cvIframe = document.getElementById('cv-iframe');
-            cvIframe.src = pdfUrl;
+            const cvObject = document.getElementById('cv-object');
+            cvObject.data = pdfUrl;
         }
     </script>
 </body>
