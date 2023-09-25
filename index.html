@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <title>Tommaso's CV</title>
     <style>
@@ -38,13 +38,13 @@
         .cv-link a:hover {
             text-decoration: underline;
         }
-        
+
         /* Media Query for screens with a maximum width of 600px (typical mobile screens) */
         @media (max-width: 600px) {
             .cv-link {
                 margin: 5px; /* Reduce margin for smaller screens */
             }
-            iframe {
+            embed, object {
                 width: 90%; /* Adjust width for smaller screens */
                 height: 70vh; /* Adjust height for smaller screens */
             }
@@ -52,7 +52,7 @@
 
         /* Media Query for larger screens */
         @media (min-width: 601px) {
-            iframe {
+            embed, object {
                 width: 80%; /* Adjust width for larger screens */
                 height: 80vh; /* Adjust height for larger screens */
             }
@@ -65,10 +65,10 @@
         <p>Choose the language you want to view the CV:</p>
         <div class="cv-links">
             <div class="cv-link">
-                <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ENG.pdf&embedded=true" target="cv-iframe">English CV</a>
+                <a href="https://github.com/tpagliari/curriculum-vitae/blob/4c462a37a5f5306031f3aa8a2f6108d5824e3128/Curriculum_Vitae_ENG.pdf" target="cv-iframe">English CV</a>
             </div>
             <div class="cv-link">
-                <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/tpagliari/curriculum-vitae/main/Curriculum_Vitae_ITA.pdf&embedded=true" target="cv-iframe">Italian CV</a>
+                <a href="https://github.com/tpagliari/curriculum-vitae/blob/4c462a37a5f5306031f3aa8a2f6108d5824e3128/Curriculum_Vitae_ITA.pdf" target="cv-iframe">Italian CV</a>
             </div>
         </div>
         <iframe src="about:blank" name="cv-iframe" frameborder="0"></iframe>
